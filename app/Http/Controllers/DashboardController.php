@@ -19,7 +19,7 @@ class DashboardController extends Controller
             $order_pending = Order::where('status','pending')->get();
             $order_sended = Order::where('status','sended')->get();
             $order_done = Order::where('status','done')->get();
-            $order_cancel = Order::where('status','done')->get();
+            $order_cancel = Order::where('status','cancel')->get();
             $product = Product::orderBy('id','DESC')->limit(6)->get();
             return view('dashboard',['title' => 'Dashboard','order_lastest' => $order_lastest,
                 'product' => $product,'order_pending' => $order_pending,'order_sended' => $order_sended,
