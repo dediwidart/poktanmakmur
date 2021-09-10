@@ -93,14 +93,14 @@ class ProductController extends Controller
                     $image->move($destinationPath, $imagePath);
                 
                     if($product->update(['name' => $request->name, 'category' => $request->category, 'price' => $request->price, 
-                    'discount' => $discount, 'weight' => $request->weight, 'description' => $desc, 'images' => $imagePath])){
+                    'discount' => $discount, 'weight' => $request->weight, 'satuan' => $request->satuan, 'description' => $desc, 'images' => $imagePath])){
                         return redirect()->back()->with('alert','Perubahan berhasil disimpan'); 
                     }else{
                         return redirect()->back()->with('alert-failed','Terjadi kesalahan'); 
                     }
                 }else{
                     if($product->update(['name' => $request->name, 'category' => $request->category, 'price' => $request->price, 
-                    'discount' => $discount, 'weight' => $request->weight, 'description' => $desc, 'images' => $product->images])){
+                    'discount' => $discount, 'weight' => $request->weight, 'satuan' => $request->satuan, 'description' => $desc, 'images' => $product->images])){
                         return redirect()->back()->with('alert','Perubahan berhasil disimpan'); 
                     }else{
                         return redirect()->back()->with('alert-failed','Terjadi kesalahan'); 
@@ -140,6 +140,7 @@ class ProductController extends Controller
                 $product->price = $request->price;
                 $product->discount = $discount;
                 $product->weight = $request->weight;
+                $product->satuan = $request->satuan;
                 $product->description = $desc;
                 $product->images = $imagePath;
 

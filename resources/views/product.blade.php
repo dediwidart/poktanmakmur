@@ -56,7 +56,7 @@
                 <img src="{{$item->images}}" class="img-fluid img-thumbnail" alt="Sheep">
             </td>
             <td>{{$item->category}}</td>
-            <td>{{$item->weight}}</td>
+            <td>{{$item->weight}} {{$item->satuan}}</td>
             @if($item->discount != "")
             <td class="text-center"><span class="badge bg-success">{{$item->discount}}%</span></td>
             <td>@currency($disprice)</td>

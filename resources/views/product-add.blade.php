@@ -59,16 +59,23 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="discount">Berat</label><span></span>
-                <div class="input-group mb-3">
-                    <input type="text" id="weight" name="weight" class="form-control" min="1" required>
-                    <div class="input-group-append">
+                <label for="weight">Berat</label><span></span>
+                <div class="input-group mb-4">
+                    <input type="text" id="weight" name="weight" class="form-control col-sm-3" min="1" required>
+                    <select name="satuan" class="form-control col-sm-2" required>
+                        <option value="" selected disabled>- Pilih Satuan -</option>
+                        <option value="ML">ML</option>
+                        <option value="Liter">Liter</option>
+                        <option value="Gram">Gram</option>
+                        <option value="Kg">Kg</option>
+                      </select>
+                    {{-- <div class="input-group-append">
                         <span class="input-group-text">gram</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="form-group">
-            <label for="weight">Deskripsi </label><span> (Optional)</span> 
+            <label for="description">Deskripsi </label><span> (Optional)</span> 
                 <input type="text" id="description" name="description" class="form-control">
             </div>
             <div class="form-group">

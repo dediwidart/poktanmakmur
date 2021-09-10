@@ -170,7 +170,7 @@
                         <span class="badge badge-primary float-right">@currency($item->price)</span></a>
                         @endif
                       <span class="product-description">
-                        {{$item->weight}}
+                        {{$item->weight}} {{$item->satuan}}
                       </span>
                     </div>
                   </li>

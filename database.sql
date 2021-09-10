@@ -285,6 +285,7 @@ CREATE TABLE `tb_product` (
   `price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `discount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `weight` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `stock` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `images` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,

@@ -64,7 +64,16 @@
             </div>
             <div class="form-group">
             <label for="weight">Berat</label>
-                <input type="text" id="weight" name="weight" class="form-control" value="{{$product->weight}}" required>
+                <div class="input-group mb-4">
+                    <input type="text" id="weight" name="weight" class="form-control col-sm-3" value="{{$product->weight}}" required>
+                        <select name="satuan" class="form-control col-sm-2" required>
+                            <option value="" disabled>- Pilih Satuan -</option>
+                            <option value="ML"{{$product->satuan== "ML" ? 'selected' : ''}}>ML</option>
+                            <option value="Liter"{{$product->satuan== "Liter" ? 'selected' : ''}}>Liter</option>
+                            <option value="Gram"{{$product->satuan== "Gram" ? 'selected' : ''}}>Gram</option>
+                            <option value="Kg"{{$product->satuan== "Kg" ? 'selected' : ''}}>Kg</option>
+                        </select>
+                </div>
             </div>
             <div class="form-group">
             <label for="weight">Deskripsi</label><span> (Optional)</span><br>
