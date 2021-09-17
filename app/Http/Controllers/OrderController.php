@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Account;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use PDF;
 
 class OrderController extends Controller
 {
@@ -32,8 +33,10 @@ class OrderController extends Controller
             return redirect('/login');
         }else{
             $order = Order::where('id',$id)->first();
-            return view('order-detail', ['order' => $order,
-            'account' => Account::where('id',$order->bid)->first()]);
+            return view('order-detail', [
+                'order'     => $order,
+                'account'   => Account::where('id',$order->bid)->first()
+            ]);
         }
     }
 
@@ -82,6 +85,21 @@ class OrderController extends Controller
             }catch(\Exception $e){
                 return redirect()->back()->with('alert-failed',$e->getMessage());
             }
+        }
+    }
+
+    public function printpdf(Request $request, $id)
+    {
+        $value = $request->session()->get('session',null);
+        if($value == null){
+            return redirect('/login');
+        }else{
+            $order = Order::where('id',$id)->first();
+            $pdf = PDF::loadView('read-order-pdf', [
+                'order'     =>$order,
+                'account'   => Account::where('id',$order->bid)->first()
+                ])->setPaper('a6','potrait');
+            return $pdf->stream();
         }
     }
 }

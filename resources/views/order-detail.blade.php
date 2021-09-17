@@ -19,7 +19,7 @@
               <div class="row">
                 <div class="col-12">
                   <h4>
-                    <i class="fas fa-globe"></i> {{\App\Models\Config::getApplicationName()}}.
+                    <img src="{{asset('/icon-store.png')}}" alt="icon-store"> {{\App\Models\Config::getApplicationName()}}
                   </h4>
                 </div>
                 <!-- /.col -->
@@ -28,9 +28,9 @@
               <div class="row invoice-info">
                 <!-- /.col -->
                 <div class="col-sm-4 invoice-col">
-                  To
+                  Penerima
                   <address>
-                    <strong>{{$account->name}}</strong><br>
+                    <strong>{{$order->bname}}</strong><br>
                     Alamat: {{$order->address}}<br>
                     Nomor: {{$account->number}}<br>
                   </address>
@@ -118,7 +118,8 @@
               <div class="row no-print">
                 <div class="col-12">
                   @if($order->status == "pending")
-                  <a href="{{url('/order/send')}}/{{$order->id}}" onclick="return confirm('Apakah Anda yakin ingin mengirim Pesanan?')" style="color:#FFFFFF;" class="btn btn-success float-right"> Kirim Pesanan </a>
+                  <a href="{{url('/order/printpdf')}}/{{$order->id}}" target="_blank" onclick="return confirm('Apakah Anda yakin ingin mencetak Pesanan?')" style="color:#FFFFFF;" class="btn btn-primary float-right"> Cetak Pesanan </a>
+                  <a href="{{url('/order/send')}}/{{$order->id}}" onclick="return confirm('Apakah Anda yakin ingin mengirim Pesanan?')" style="color:#FFFFFF; margin-right: 5px;" class="btn btn-success float-right"> Kirim Pesanan </a>
                   <a href="{{url('/order/cancel')}}/{{$order->id}}" onclick="return confirm('Apakah Anda yakin ingin membatalkan Pesanan?')" style="color:#FFFFFF; margin-right: 5px;" class="btn btn-danger float-right"> Batalkan Pesanan</a>
                   @elseif($order->status == "sended")
                   <a href="{{url('/order/end')}}/{{$order->id}}" onclick="return confirm('Apakah Anda yakin ingin menyelesaikan Pesanan?')" style="color:#FFFFFF;" class="btn btn-success float-right"> Selesai </a>

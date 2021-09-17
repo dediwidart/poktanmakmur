@@ -30,6 +30,7 @@ Route::get('/login', function(){return view('login');});
 Route::get('/logout', [DashboardController::class, 'logout']);
 Route::get('/order/{status}', [OrderController::class, 'index']);
 Route::get('/order/detail/{id}', [OrderController::class, 'detail']);
+Route::get('/order/printpdf/{id}', [OrderController::class, 'printpdf']);
 Route::get('/order/send/{id}', [OrderController::class, 'send']);
 Route::get('/order/end/{id}', [OrderController::class, 'end']);
 Route::get('/order/cancel/{id}', [OrderController::class, 'cancel']);
