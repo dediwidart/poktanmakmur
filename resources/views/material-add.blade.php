@@ -44,7 +44,7 @@
              </div>
             <div class="row">
             <div class="col-12">
-                <a href="{{url('/category')}}" class="btn btn-secondary">Kembali</a>
+                <a href="{{url('/material')}}" class="btn btn-secondary">Kembali</a>
                 <button type="submit" class="btn btn-success float-right">Upload</button>
                 </div>
             </div>
