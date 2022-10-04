@@ -41,9 +41,9 @@
               </div>
               <div class="form-group">
                 <div class="row">
-                    <label class="col-md-4">Dari Pukul:</label>
-                    <label class="col-md-4">Sampai Pukul:</label>
-                    <label class="col-md-4">Zona Waktu:</label>
+                    <label class="col-md-4">Dari Pukul :</label>
+                    <label class="col-md-4">Sampai Pukul :</label>
+                    <label class="col-md-4">Zona Waktu :</label>
                 </div>
                 <div class="row">
                     <div class="input-group col-md-4">
@@ -56,7 +56,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="far fa-clock"></i></span>
                           </div>
-                          <input type="text" class="form-control" placeholder="11.00" name="time_end">
+                          <input type="text" class="form-control" placeholder="11.00 / selesai" name="time_end">
                     </div>
                     <div class="input-group col-md-4">
                         <select class="form-control custom-select" name="time_zone" required>
@@ -75,7 +75,7 @@
             </div>
             <div class="row">
             <div class="col-12">
-                <a href="/faq" class="btn btn-secondary">Kembali</a>
+                <a href="/agenda" class="btn btn-secondary">Kembali</a>
                 <input type="submit" value="Simpan" class="btn btn-success float-right">
                 </div>
             </div>

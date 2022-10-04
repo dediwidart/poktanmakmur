@@ -75,7 +75,7 @@
             </div>
             <div class="row">
             <div class="col-12">
-                <a href="/faq" class="btn btn-secondary">Kembali</a>
+                <a href="/agenda" class="btn btn-secondary">Kembali</a>
                 <input type="submit" value="Simpan" class="btn btn-success float-right">
                 </div>
             </div>
